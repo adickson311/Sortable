@@ -23,9 +23,8 @@
 	/**
 	 * @typedef   {Object}        ngSortEvent
 	 * @property  {*}             model      List item
-	 * @property  {Object|Array}  models     List of items
-	 * @property  {number}        oldIndex   before sort
-	 * @property  {number}        newIndex   after sort
+	 * @property  {Object|Array}  models     List of items 
+	 * @property {Object} 		  eventData  Event
 	 */
 
 	var expando = 'Sortable:ng-sortable';
@@ -82,10 +81,9 @@
 
 						/* jshint expr:true */
 						options[name] && options[name]({
-							model: item || source[evt.newIndex],
+							model: item || source[evt.oldIndex], 
 							models: source,
-							oldIndex: evt.oldIndex,
-							newIndex: evt.newIndex
+							eventData: evt
 						});
 					}
 
@@ -132,7 +130,7 @@
 						return opts;
 					}, {
 						onStart: function (/**Event*/evt) {
-							nextSibling = evt.from === evt.item.parentNode ? evt.item.nextSibling : evt.clone.nextSibling;
+							nextSibling = evt.item.nextSibling;
 							_emitEvent(evt);
 							scope.$apply();
 						},
