@@ -1,7 +1,7 @@
 {
   "name": "sortablejs",
   "exportName": "Sortable",
-  "version": "1.4.2",
+  "version": "0.0.1",
   "devDependencies": {
     "grunt": "*",
     "grunt-version": "*",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rubaxa/Sortable.git"
+    "url": "git://github.com/pray4zombies/Sortable.git"
   },
   "keywords": [
     "sortable",
