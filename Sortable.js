@@ -481,7 +481,7 @@
 				var touch = evt.touches ? evt.touches[0] : evt,
 					dx = touch.clientX - tapEvt.clientX,
 					dy = touch.clientY - tapEvt.clientY,
-					translate3d = evt.touches ? 'translate3d(' + dx + 'px,' + dy + 'px,0)' : 'translate(' + dx + 'px,' + dy + 'px)';
+					translate3d = evt.touches ? 'translate3d(' + 0 + 'px,' + dy + 'px,0)' : 'translate(' + 0 + 'px,' + dy + 'px)';
 
 				moved = true;
 				touchEvt = touch;
@@ -1266,6 +1266,6 @@
 
 
 	// Export
-	Sortable.version = '1.4.2';
+	Sortable.version = '0.0.2';
 	return Sortable;
 });
