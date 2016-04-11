@@ -203,6 +203,8 @@
 			draggable: /[uo]l/i.test(el.nodeName) ? 'li' : '>*',
 			ghostClass: 'sortable-ghost',
 			chosenClass: 'sortable-chosen',
+			disableVisualSort: false, 
+            disableXDragPoistionChange: false, 
 			ignore: 'a, img',
 			filter: null,
 			animation: 0,
@@ -481,7 +483,13 @@
 				var touch = evt.touches ? evt.touches[0] : evt,
 					dx = touch.clientX - tapEvt.clientX,
 					dy = touch.clientY - tapEvt.clientY,
+					translate3d = null;
+
+				if(this.options.disableXDragPoistionChange) {
 					translate3d = evt.touches ? 'translate3d(' + 0 + 'px,' + dy + 'px,0)' : 'translate(' + 0 + 'px,' + dy + 'px)';
+				} else {
+					translate3d = evt.touches ? 'translate3d(' + dx + 'px,' + dy + 'px,0)' : 'translate(' + dx + 'px,' + dy + 'px)';
+				}
 
 				moved = true;
 				touchEvt = touch;
@@ -682,7 +690,7 @@
 							after = (nextSibling !== dragEl) && !isLong || halfway && isLong;
 						}
 
-						if (!dragEl.contains(el)) {
+						if (!dragEl.contains(el) && !this.options.disableVisualSort) {
 							if (after && !nextSibling) {
 								el.appendChild(dragEl);
 							} else {
@@ -1266,6 +1274,6 @@
 
 
 	// Export
-	Sortable.version = '0.0.2';
+	Sortable.version = '0.0.3';
 	return Sortable;
 });
