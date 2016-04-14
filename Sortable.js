@@ -746,7 +746,7 @@
 							after = (nextSibling !== dragEl) && !isLong || halfway && isLong;
 						}
 
-						if (!dragEl.contains(el)) {
+						if (!dragEl.contains(el) && !this.options.disableVisualSort) {
 							if (after && !nextSibling) {
 								el.appendChild(dragEl);
 							} else {
@@ -1346,6 +1346,6 @@
 
 
 	// Export
-	Sortable.version = '0.0.4';
+	Sortable.version = '0.0.5';
 	return Sortable;
 });
