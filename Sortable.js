@@ -286,6 +286,8 @@
 		constructor: Sortable,
 
 		_onTapStart: function (/** Event|TouchEvent */evt) {
+			document.onselectstart = function(){ return false; };
+
 			var _this = this,
 				el = this.el,
 				options = this.options,
@@ -799,6 +801,7 @@
 		},
 
 		_onDrop: function (/**Event*/evt) {
+			document.onselectstart = null;
 			var el = this.el,
 				options = this.options;
 
@@ -1346,6 +1349,6 @@
 
 
 	// Export
-	Sortable.version = '0.0.5';
+	Sortable.version = '0.0.6';
 	return Sortable;
 });
