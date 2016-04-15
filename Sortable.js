@@ -1349,6 +1349,6 @@
 
 
 	// Export
-	Sortable.version = '0.0.6';
+	Sortable.version = '0.0.7';
 	return Sortable;
 });
