@@ -702,7 +702,7 @@
 						target && this._animate(targetRect, target);
 					}
 				}
-				else if (target && !target.animated && target !== dragEl && (target.parentNode[expando] !== void 0)) {
+				else if (target && !target.animated  && (target.parentNode[expando] !== void 0)) { //&& target !== dragEl
 					if (lastEl !== target) {
 						lastEl = target;
 						lastCSS = _css(target);
